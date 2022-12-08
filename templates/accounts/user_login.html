@@ -33,12 +33,13 @@
     <link href="{% static 'css/signin.css' %}" rel="stylesheet">
   </head>
   <body class="text-center">
-    <form class="form-signin" method="POST" action=".">
+    <form class="form-signin" method="POST" action="." autocomplete="off">
     {% csrf_token %}
-        <h1 class="h3 mb-3 font-weight-normal">Identifique-se</h1>
-        <input type="text" class="form-control" id="username" name="username" placeholder="Nome de usuário" required autofocus>
+        <p><h1 class="h3 mb-3 font-weight-normal">Identifique-se</h1></p>
+        <p><input type="text" class="form-control" id="username" name="username" placeholder="Nome de usuário" required autofocus></p>
         <input type="password" class="form-control" id="password" name="password" placeholder="Digite sua senha">
-        <button class="w-100 btn btn-lg btn-primary" type="submit">Entrar</button>
+        <p><button class="w-100 btn btn-lg btn-primary" type="submit">Entrar</button></p>
+        <a href="{% url 'accounts:add_user' %}" class="w-100 btn btn-lg btn-info btn-dark" type="submit">Criar conta</a>
     </form>
   </body>
 </html>
